@@ -12,7 +12,8 @@ function enviarDatos(){
         body: jsonAEnviar,
     };
     fetch('https://jsonplaceholder.typicode.com/users', options)
-        .then(coso => console.log(coso))
+    .then(response => response.json())
+    .then(data => console.log(data))
 }
 
 document.getElementById('enviar').addEventListener("click", enviarDatos)
